@@ -1,0 +1,61 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after ::before {
+    box-sizing: inherit;
+}
+
+
+
+.body {
+    background-color: black;
+    background-size:auto;
+    /* background-position: center; */
+    /* max-width: 400px; */
+    margin: auto;
+    color: rgb(200, 200, 200);
+    font-family: 'Lato', sans-serif;
+    
+}
+
+.orderHead{
+    width: 10%;
+    font-weight:bolder;
+    font-size:18px;
+    background-color:rgb(50, 50, 50)
+}
+
+.descriptionHead{
+    font-weight:bolder;
+    font-size:18px;
+    background-color:rgb(50, 50, 50)
+}
+
+.order{
+    font-weight:bolder;
+    font-size:larger;
+    line-height: 1;
+    
+
+}
+
+.name{
+    font-weight:lighter;
+    font-size:14px;
+    line-height: 1;
+}
+
+.descryption{
+    font-weight:lighter;
+    font-size:18px;
+    line-height: 1;
+}
+
+.table1{
+    width:80%;
+    table, th, td {
+        border: 1px solid;}
+/* tr:nth-child(even) {background-color:rgb(50, 50, 50);}    */
+}
+

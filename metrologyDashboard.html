@@ -1,41 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+ <head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <title>Zlecenia-metrologia</title>
+    </head>
 
 <body onload="getData()">
+<div class="body">
+ 
+    <table class="table1" id="userTable1">
+	    <thead>
+            <th class="orderHead">Zlecenia oczekujące</th>
+            <th class="descriptionHead">Opis zlecenia</th>
+        </thead>
+        
+        <tbody id="tbody1">
+        </tbody>
+    </table>
 
-<h1>Zlecenia-Metrologia</h1>
+<script defer src="js/fetch.js"></script>
 
-<table id="userTable1">
-	<thead>
-        <th>Zlecenie</th>
-        <th>Zlecający</th>
-        <th>Opis</th>
-    </thead>
-    <tbody id="tbody1">
-
-    </tbody>
-
-</table>
-
-<script>
-    async function getData() {
-        const data = await fetch("https://webemea.nexteer.com:4643/mikron-api/api/Form/loadallplantheaderstolist?plant=577");
-        const records = await data.json();
-    
-        let tab = '';
-        records.forEach(function(order) {
-            tab += `<tr>
-                <td>${order.orderNumber}</td>
-                <td>${order.requestedBy}</td>
-                <td>${order.description}</td>
-                </tr>`
-                     
-        })
-        document.getElementById('tbody1').innerHTML = tab;
-    
-    }
-    </script>
-
+</div>
 
 </body>
 </html>
