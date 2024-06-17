@@ -9,6 +9,9 @@ html {
 
 
 .body {
+    display: grid;
+    grid-template-columns: 85% 14%;
+    column-gap:1%;
     background-color: black;
     background-size:auto;
     /* background-position: center; */
@@ -21,15 +24,18 @@ html {
 
 .orderHead{
     width: 10%;
+    height: 70px;
     font-weight:bolder;
     font-size:18px;
-    background-color:rgb(50, 50, 50)
+    background-color:rgb(60, 20, 10);
 }
 
+
 .descriptionHead{
+    height: 70px;
     font-weight:bolder;
     font-size:18px;
-    background-color:rgb(50, 50, 50)
+    background-color:rgb(60, 20, 10);
 }
 
 .order{
@@ -37,7 +43,6 @@ html {
     font-size:larger;
     line-height: 1;
     
-
 }
 
 .name{
@@ -53,9 +58,32 @@ html {
 }
 
 .table1{
-    width:80%;
+    grid-column: 1;
+    width:100%;
+    height:fit-content;
     table, th, td {
         border: 1px solid;}
+    tr:nth-child(even) {background-color:rgb(30, 30, 30);}
+}
+
+.table2{
+    grid-column:2;
+    width:100%;
+    height:fit-content;
+    table, th, td {
+    border: 3px solid;}
+    background-color:rgb(38, 50, 20);
 /* tr:nth-child(even) {background-color:rgb(50, 50, 50);}    */
 }
 
+.orderInPrgsHead{
+    width: 10%;
+    height: 70px;
+    font-weight:bolder;
+    font-size:18px;
+    background-color:rgb(60, 20, 10);
+}
+
+.priority{
+    color:orangered;
+}

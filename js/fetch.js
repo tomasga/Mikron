@@ -9,7 +9,7 @@ async function getData() {
     let tab = '';
     records.forEach(function(order) {
         tab += `<tr>
-            <td><p class="order">${order.orderNumber}</p><p class="name">${order.requestedBy}</P></td>
+            <td><p class="order priority">${order.orderNumber}</p><p class="name">${order.requestedBy}</P></td>
             <td class="descryption">${order.description}</td>
             </tr>`
     })  
@@ -25,7 +25,21 @@ async function getData() {
                 <td class="descryption">${order.description}</td>
                 </tr>`        
     })
+
+    const data2 = await fetch("https://webemea.nexteer.com:4643/mikron-api/api/Form/loadallplantheaderstolist?plant=577");
+    
+    //chciałbym żeby był taki formularz jak poniżej zamiast tego powyżej (zwraca tylko assigned)
+    //const data2 = await fetch("https://webemea.nexteer.com:4643/mikron-api/api/Form/loadallplantheaderstolist?plant=577&activeStatus=Assigned"); 
+    
+    let tab2 = '';
+    const records2 = await data2.json();
+        records2.forEach(function(order) {
+            tab2 += `<tr class="tableRow">
+                <td><p class="order">${order.orderNumber}</p><p class="name">Zlecający: ${order.requestedBy}</P><p class="name">Wykonuje: ${order.assignedTo}</P></td>
+                </tr>`        
+    })
     document.getElementById('tbody1').innerHTML = tab;
+    document.getElementById('tbody2').innerHTML = tab2;
 
 
 
