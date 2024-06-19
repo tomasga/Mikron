@@ -38,6 +38,14 @@ async function getData() {
                 <td><p class="order">${order.orderNumber}</p><p class="name">Zlecający: ${order.requestedBy}</P><p class="name">Wykonuje: ${order.assignedTo}</P></td>
                 </tr>`        
     })
+    
+    let x1 = await fetch("http://10.236.39.68/fresh.xml");
+    let y1 = await x1.text();
+    document.getElementById("value1").innerHTML = (y1.substr(143, 4));
+ 
+    let x2 = await fetch("http://10.236.39.44/fresh.xml");
+    let y2 = await x2.text();
+    document.getElementById("value2").innerHTML = (y2.substr(143, 4));
     document.getElementById('tbody1').innerHTML = tab;
     document.getElementById('tbody2').innerHTML = tab2;
 
